@@ -1,2 +1,14 @@
 ---
-# defaults file for play
+play_minimum_java_version:  1.6
+play_version_major:         1
+play_version_minor:         3
+play_version_patch:         4
+play_version:               "{{ play_version_major }}.{{ play_version_minor }}.{{ play_version_patch }}"
+play_dir:                   "play1-{{ play_version }}"
+play_download_file:         "{{ play_dir }}.tar.gz"
+play_url:                   "https://github.com/playframework/play1/archive/{{ play_version }}.tar.gz"
+play_checksum_algorithm:    "sha256"
+play_checksum:              "TODO"
+play_download_dir:          "{{ ansible_env.HOME}}"
+play_install_dir:           "/opt"
+play_path:                  "{{ play_install_dir }}/{{ play_dir }}"
