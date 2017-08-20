@@ -21,12 +21,23 @@
     play_checksum: "{{ checksums[checksum_key][play_checksum_algorithm] }}"
   when: play_checksum == ""
 
+- name: stat play d/l
+  stat:
+    path:  "{{ play_download_dir }}/{{ play_download_file }}"
+    checksum_algorithm: "{{ play_checksum_algorithm }}"
+  register: existing_dl
+
+- set_fact:
+    force_new_download: "{{ existing_dl.stat.checksum != play_checksum }}"
+  when: existing_dl.stat.exists
+
 - name: get play
   get_url:
     url:      "{{ play_url }}"
     dest:     "{{ play_download_dir }}"
     checksum: "{{ play_checksum_algorithm }}:{{ play_checksum }}"
   register: got_play
+  when: force_new_download | default ('true')
 
 - name: install prereqs
   package:
