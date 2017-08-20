@@ -45,10 +45,17 @@
   become: true
   when: got_play.changed
 
+- name: symlink play
+  file:
+    src:    "{{ play_install_dir }}/{{ play_dir }}"
+    dest:   "{{ play_path }}"
+    state:  link
+  become: true
+
 - name: build play
   shell: "ant -Dversion={{ play_version }}"
   args:
-    chdir: "{{ play_install_dir }}/{{ play_dir }}/framework"
+    chdir: "{{ play_path }}/framework"
   become: true
 
 - name: add play to path
