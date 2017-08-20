@@ -19,6 +19,7 @@
 - name: set play checksum
   set_fact:
     play_checksum: "{{ checksums[checksum_key] }}"
+  when: play_checksum == ""
 
 - name: get play
   get_url:
