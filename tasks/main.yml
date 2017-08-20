@@ -12,11 +12,19 @@
     msg: "this installation of play requires java version {{ play_minimum_java_version }} or higher"
   when: "not returned_java_version[0] | version_compare('{{ play_minimum_java_version }}', '>=')"
 
+- name: set play checksum key
+  set_fact:
+    checksum_key: "{{ play_download_file | replace('-','_') | replace('.','_')}}"
+
+- name: set play checksum
+  set_fact:
+    play_checksum: "{{ checksums[checksum_key] }}"
+
 - name: get play
   get_url:
     url:      "{{ play_url }}"
     dest:     "{{ play_download_dir }}"
-    # checksum: "{{ play_checksum_algorithm }}:{{ play_checksum }}"
+    checksum: "{{ play_checksum_algorithm }}:{{ play_checksum }}"
   register: got_play
 
 - name: install prereqs
@@ -42,12 +50,6 @@
     chdir: "{{ play_install_dir }}/{{ play_dir }}/framework"
   become: true
 
-# - name: symlink play
-#   file:
-#     src:    "{{ play_install_dir }}/{{ tomcat_dir }}"
-#     dest:   "{{ catalina_home }}"
-#     state:  link
-
 - name: add play to path
   lineinfile:
     dest:   "/etc/profile.d/play.sh"
@@ -57,7 +59,7 @@
   become: true
 
 - name: get play version
-  shell:   "play"
+  shell: "play version"
   args:
     executable: /bin/bash
   register: play_version_result

@@ -1,2 +1,8 @@
 ---
-# vars file for play
+# NOTE: checksums for play1 releases are not provided,
+# so I am including these sha256 sums I calculated myself,
+# on the belief that it's better than nothing...
+checksums:
+  play1_1_3_2_tar_gz: "b35d2fa5462780ab20d5a9124edfb9d3644773f45d61ee0b42438ae01111fcf1"
+  play1_1_3_3_tar_gz: "cc4bf0d37fdfcea82916b60460427f3149822c43f3af730adee8e50ba98845e0"
+  play1_1_3_4_tar_gz: "c116ae183ff4727cd7f7c7781333e15e0501c4b17154d1f8061243fc55d709e5"
