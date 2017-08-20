@@ -68,6 +68,7 @@
   args:
     chdir: "{{ play_path }}/framework"
   become: true
+  when: got_play.changed
 
 - name: add play to path
   lineinfile:
