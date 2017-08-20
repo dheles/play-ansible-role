@@ -1,8 +1,14 @@
 ---
 # NOTE: checksums for play1 releases are not provided,
-# so I am including these sha256 sums I calculated myself,
+# so I am including these sums I calculated myself,
 # on the belief that it's better than nothing...
 checksums:
-  play1_1_3_2_tar_gz: "b35d2fa5462780ab20d5a9124edfb9d3644773f45d61ee0b42438ae01111fcf1"
-  play1_1_3_3_tar_gz: "cc4bf0d37fdfcea82916b60460427f3149822c43f3af730adee8e50ba98845e0"
-  play1_1_3_4_tar_gz: "c116ae183ff4727cd7f7c7781333e15e0501c4b17154d1f8061243fc55d709e5"
+  play1_1_3_2_tar_gz:
+    sha1:   "dc3a16d44b234e69c5e135cb71f05936017fe003"
+    sha256: "b35d2fa5462780ab20d5a9124edfb9d3644773f45d61ee0b42438ae01111fcf1"
+  play1_1_3_3_tar_gz:
+    sha1:   "aed78c8a62c1834f18125426b28e7807c117cca1"
+    sha256: "cc4bf0d37fdfcea82916b60460427f3149822c43f3af730adee8e50ba98845e0"
+  play1_1_3_4_tar_gz:
+    sha1:   "194bcd9eb9cb075b0d78dcd410a58a72d1ab6f9c"
+    sha256: "c116ae183ff4727cd7f7c7781333e15e0501c4b17154d1f8061243fc55d709e5"
