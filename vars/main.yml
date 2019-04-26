@@ -33,3 +33,9 @@ checksums:
   play1_1_4_4_tar_gz:
     sha1:   "99a8cfb25018d46b6f70ed8bbd273904db91d6a9"
     sha256: "3eef3b9321a0009cf70f2b043b71e949ba4a88a5a08da94a4bd5995d696d99b6"
+  play1_1_4_5_tar_gz:
+    sha1:   "468b4ad26c198131ef16796ecec047fa992bcc78"
+    sha256: "96f6dbbf3ae77bd94e910da230b9ea598db6ec44f4eead16bc67c61bab89e693"
+  play1_1_4_6_tar_gz:
+    sha1:   "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+    sha256: "aa635fc8874032b6e40a27f9a81c8bbab6779ad95f4bf40808d215d83d6e7185"

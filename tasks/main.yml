@@ -63,6 +63,14 @@
     state:  link
   become: true
 
+- name: fix the docviewer build file
+  lineinfile:
+    dest: "{{ play_path }}/modules/docviewer/build.xml"
+    insertafter: '(^\s*)<target name="compile">$'
+    line: '    <mkdir dir="lib" />'
+    state: present
+  become: true
+
 - name: build play
   shell: "ant -Dversion={{ play_version }}"
   args:
