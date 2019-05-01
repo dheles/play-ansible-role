@@ -1,6 +1,6 @@
 galaxy_info:
   author: Drew Heles
-  description: Installs the Play Framework
+  description: Installs version 1.x of the Play Framework
 
   license: CC0
 
@@ -12,6 +12,7 @@ galaxy_info:
   platforms:
   - name: EL
     versions:
+    - 6
     - 7
 
   galaxy_tags: []
